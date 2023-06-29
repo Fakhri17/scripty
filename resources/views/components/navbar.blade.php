@@ -1,3 +1,11 @@
+@php
+    $navbarLinks = [
+        ['title' => 'Tentang Kami', 'link' => 'about'],
+        ['title' => 'List Dospem', 'link' => 'dosen'],
+        ['title' => 'Login', 'link' => 'login'],
+    ];
+@endphp
+
 <header class="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-white text-sm py-4 shadow-md">
   <nav class="max-w-[85rem] w-full mx-auto px-5 md:px-10 lg:px-20 2xl:px-0 sm:flex sm:items-center sm:justify-between" aria-label="Global">
     <div class="flex items-center justify-between">
@@ -17,10 +25,14 @@
     </div>
     <div id="navbar-image-2" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
       <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5">
-        <a class="font-medium text-base text-main-color" href="#">Beranda</a>
-        <a class="font-medium text-base text-black hover:text-main-color " href="#">Tentang Kami</a>
-        <a class="font-medium text-base text-black hover:text-main-color " href="#">List Dospem</a>
-        <a class="font-medium text-base text-black hover:text-main-color " href="#">Login</a>
+        <a class="font-medium text-base {{ Request::path() == '/' ? 'text-main-color' : 'text-black hover:text-main-color' }}" href="/">
+          Beranda
+        </a>
+        @foreach ($navbarLinks as $item)
+          <a class="font-medium text-base {{ $item['link'] != '/' && Request::is($item['link']) ? 'text-main-color' : 'text-black hover:text-main-color' }}" href="{{ $item['link'] }}">
+            {{ $item['title'] }}
+          </a>
+        @endforeach
       </div>
     </div>
   </nav>
