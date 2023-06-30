@@ -24,6 +24,11 @@ Route::get('/', function () {
     return view('index');
 });
 
+
+Route::get('/dosen', function () {
+    return view('list_dosen');
+});
+
 Route::get('/detail_dosen', function () {
     return view('detail_dosen');
 });
