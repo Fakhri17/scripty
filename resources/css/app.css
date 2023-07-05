@@ -47,4 +47,8 @@
     .input-auth{
         @apply bg-white border-2 border-main-color rounded-md placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:border-main-color active:border-main-color;
     }
+
+    .dashboard-list-active{
+        @apply bg-main-color text-white;
+    }
 }
