@@ -1,17 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Mahasiswa;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class SkripsiController extends Controller
+class SkripsiMhsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view('mahasiswa.skripsi', [
+            'title' => 'Skripsi'
+        ]);
     }
 
     /**
