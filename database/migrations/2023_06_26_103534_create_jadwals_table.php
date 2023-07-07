@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('jadwals', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->string('label');
-            $table->dateTime('jadwal');
+            $table->string('label')->nullable();
+            $table->date('tanggal');
+            $table->time('waktu');
             $table->string('status')->nullable()->default('Diajukan');
             $table->timestamps();
+
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
