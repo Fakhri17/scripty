@@ -19,10 +19,12 @@ class CheckRoleDosen
         $user = $request->user();
 
         // Periksa jika pengguna memiliki peran 'dosen'
-        if ($user->role === 'dosen') {
+        if (isset($user->role) && $user->role === 'dosen') {
             return $next($request);
-        } else {
+        } else if (isset($user->role) && $user->role === 'mhs') {
             return redirect('/mhs/dashboard');
+        } else {
+            return redirect('/login');
         }
     }
 }
