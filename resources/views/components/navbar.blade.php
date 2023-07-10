@@ -1,8 +1,8 @@
 @php
     $navbarLinks = [
-        ['title' => 'Tentang Kami', 'link' => 'about'],
-        ['title' => 'List Dospem', 'link' => 'dosen'],
-        ['title' => 'Login', 'link' => 'login'],
+        ['title' => 'Tentang Kami', 'link' => '/about'],
+        ['title' => 'List Dospem', 'link' => '/dosen'],
+        ['title' => 'Login', 'link' => '/login'],
     ];
 @endphp
 

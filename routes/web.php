@@ -31,12 +31,12 @@ Route::get('/', function () {
 
 
 Route::get('/dosen', function () {
-    return view('list_dosen');
+    return view('dosen/index');
 });
 
 
-Route::get('/detail_dosen', function () {
-    return view('detail_dosen');
+Route::get('/dosen/{slug}', function () {
+    return view('dosen/_detail');
 });
 
 
