@@ -19,10 +19,12 @@ class CheckRoleMhs
         $user = $request->user();
 
         // Periksa jika pengguna memiliki peran 'mahasiswa' 
-        if ($user->role === 'mhs') {
+        if (isset($user->role) && $user->role === 'mhs') {
             return $next($request);
-        } else {
+        } else if (isset($user->role) && $user->role === 'dosen') {
             return redirect('/dosen/dashboard');
+        } else {
+            return redirect('/login');
         }
     }
 }

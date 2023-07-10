@@ -42,7 +42,6 @@ Route::get('/dosen/{slug}', function () {
 
 
 
-
 Route::middleware('guest')->group(function () {
     // Route Login
     Route::prefix('login')->middleware('guest')->group(function () {
@@ -67,7 +66,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::middleware('roleMhs')->group(function () {
     Route::prefix('mhs')->group(function () {
         Route::get('/dashboard', [DashboardMhsController::class, 'index']);
-        Route::get('/list-dosen', [ListDosenMhsController::class, 'index']);
+        // Route::get('/list-dosen', [ListDosenMhsController::class, 'index']);
         Route::get('/detail-dosen/{id}/detail', [ListDosenController::class, 'show']);
         Route::get('/jadwal', [JadwalMhsController::class, 'index']);
         Route::post('/jadwal/store', [JadwalMhsController::class, 'store']);
@@ -82,8 +81,6 @@ Route::middleware('roleDosen')->group(function () {
         Route::get('/dashboard', [DashboardDosenController::class, 'index']);
     });
 });
-
-
 
 
 
