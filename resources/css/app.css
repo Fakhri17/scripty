@@ -51,4 +51,7 @@
     .dashboard-list-active{
         @apply bg-main-color text-white;
     }
+    .button-contact{
+        @apply py-2 px-7 bg-main-color text-white font-medium text-sm rounded-md hover:text-main-color hover:bg-white border-2 border-main-color;
+    }
 }
